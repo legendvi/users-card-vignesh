@@ -1,0 +1,7 @@
+.image {
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-top: 1rem;
+  overflow: inherit;
+}
