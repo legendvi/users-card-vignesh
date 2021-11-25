@@ -14,7 +14,16 @@ export default function BasicCard(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
-    <Card sx={{ minWidth: 275, borderRadius: 25 }}>
+    <Card
+      sx={{ minWidth: 275, borderRadius: 25 }}
+      onClick={updateUser.bind(
+        this,
+        props.item,
+        dispatch,
+        navigate,
+        props.index
+      )}
+    >
       <CardContent>
         <CardMedia
           component="img"
@@ -32,21 +41,12 @@ export default function BasicCard(props) {
         </Typography>
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          variant="contained"
-          onClick={updateUser.bind(
-            this,
-            props.item,
-            dispatch,
-            navigate,
-            props.index
-          )}
-        >
+        <Button variant="contained">
           <span className="material-icons">
             info
             <Box sx={{ mr: 2 }} />{" "}
           </span>
-          More Info
+          Click Card
         </Button>
       </CardActions>
     </Card>
